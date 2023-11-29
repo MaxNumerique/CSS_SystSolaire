@@ -5,20 +5,23 @@
 }
 
 :root {
-    --planet-box-shadow: 0 0 17px 5px #fff;
-    --soleil-linear-gradient: linear-gradient(rgb(224, 131, 8), rgb(255, 51, 0));
-    --mer-linear-gradient: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
-    --terre-linear-gradient: linear-gradient(rgb(155, 221, 0), rgb(184, 73, 0));
-    --lune1-linear-gradient: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
-    --lune2-linear-gradient: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
-    --lune3-linear-gradient: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
-    --foudre-linear-gradient: linear-gradient(rgb(194, 194, 194), rgb(159, 255, 49));
-    --feu-linear-gradient: linear-gradient(rgb(194, 194, 194), rgb(202, 0, 0));
-    --air-linear-gradient: linear-gradient(rgb(194, 194, 194), rgb(0, 0, 0));
+    --soleil-box-shadow: 0 0 17px 5px rgb(224, 131, 8);
+    --planet-box-shadow: 0 0 10px 1px #ffffff;
+    --soleil-linear-gradient: linear-gradient(135deg, rgb(224, 131, 8), rgb(255, 51, 0));
+    --mer-linear-gradient: linear-gradient(135deg, rgb(0, 42, 125), rgb(9, 255, 198));
+    --terre-linear-gradient: linear-gradient(135deg, rgb(155, 221, 0), rgb(184, 73, 0));
+    --lune1-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
+    --lune2-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
+    --lune3-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
+    --foudre-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(159, 255, 49));
+    --feu-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(202, 0, 0));
+    --air-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(0, 0, 0));
+    --luneAir1-linear-gradient: linear-gradient(135deg,rgb(102, 102, 102), rgb(233, 233, 233));
+    --luneAir2-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
 }
 
 body {
-    background-image: url(../CSS_SystSolaire/201447.jpg);
+    background-image: url(/201447.jpg);
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,8 +42,8 @@ body {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(224, 131, 8), rgb(255, 51, 0));
+    box-shadow: var(--soleil-box-shadow);    
+    background-image: var(--soleil-linear-gradient);
     animation: 10s soleil infinite linear;
     position: absolute;
     
@@ -67,23 +70,24 @@ body {
     width: 17px;
     height: 17px;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(71, 181, 255), rgb(48, 0, 161));
-    animation: 28s mer infinite linear;
+    background-image: var(--mer-linear-gradient);
+    animation: 21s mer infinite linear;
 }
 
 .foudre {
     width: 26px;
     height: 26px;
     box-shadow: var(--planet-box-shadow);
-    background-image: linear-gradient(rgb(194, 194, 194), rgb(159, 255, 49));
-    animation: 17s foudre infinite linear;
+    background-image: var(--foudre-linear-gradient);
+    animation: 26s foudre infinite linear;
 }
 
 .feu {
     width: 62px;
     height: 62px;
-    background-image: linear-gradient(rgb(194, 194, 194), rgb(202, 0, 0));
+    background-image: var();
     box-shadow: var(--planet-box-shadow);
+    background-image: var(--feu-linear-gradient);
     animation: 40s feu infinite linear;
     
 }
@@ -93,20 +97,18 @@ body {
     height: 5px;
     border-radius: 50%;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
+    background-image: var(--lune1-linear-gradient);
     animation: 9s lune1 infinite linear;    
     position: fixed;
     top: 50%;
-    left: 50%;
-    box-shadow: 0 0 17px 5px #fff;
-}
+    left: 50%;}
 
 .lune2 {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
+    background-image: var(--lune2-linear-gradient);
     animation: 9s lune2 infinite linear;    
     position: fixed;
     top: 50%;
@@ -117,7 +119,7 @@ body {
     height: 5px;
     border-radius: 50%;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(102, 102, 102), rgb(233, 233, 233));
+    background-image: var(--lune3-linear-gradient);
     animation: 7.5s lune3 infinite linear;    
     position: fixed;
     top: 50%;
@@ -126,28 +128,28 @@ body {
 
 @keyframes lune1 {
     0% {
-        transform: translate(50%, 50%) rotate(0deg) translateX(43px) rotate(0deg);
+        transform: translate(50%, 50%) rotate(0deg) translateX(43px);
     }
     100% {
-        transform: translate(50%, 50%) rotate(360deg) translateX(43px) rotate(360deg);
+        transform: translate(50%, 50%) rotate(360deg) translateX(43px);
     }
 }
 
 @keyframes lune2 {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(-43px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-43px);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(-43px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-43px) ;
     }
 }
 
 @keyframes lune3 {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(-53px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-53px);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(-53px) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-53px);
     }
 }
 
@@ -155,61 +157,103 @@ body {
     width: 32px;
     height: 32px;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(155, 221, 0), rgb(184, 73, 0));
-    animation: 24s terre infinite linear;
+    background-image: var(--terre-linear-gradient);
+    animation: 31s terre infinite linear;
 }
 
 .air {
     width: 100px;
     height: 100px;
     box-shadow: var(--planet-box-shadow);    
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(253, 253, 253));
-    animation: 24s air infinite linear;
+    background-image: var(--air-linear-gradient);
+    animation: 57s air infinite linear;
 }
 
+.luneAir1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: var(--planet-box-shadow);    
+    background-image: var(--luneAir1-linear-gradient);
+    animation: 6s luneAir1 infinite linear;    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.luneAir2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: var(--planet-box-shadow);    
+    background-image: var(--luneAir2-linear-gradient);
+    animation: 12s luneAir2 infinite linear;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+
+@keyframes luneAir1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-60px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-60px);
+    }
+}
+
+@keyframes luneAir2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(70px) ;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg) translateX(70px) ;
+    }
+}
 
 
 @keyframes mer {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateY(-100px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-90px);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateY(-100px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-90px) ;
     }
 }
 
 @keyframes foudre {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateY(-150px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-130px) ;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateY(-150px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-130px) ;
     }
 }
 
 @keyframes feu {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateY(-220px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-200px) ;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateY(-220px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-200px) ;
     }
 }
 
 @keyframes terre {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateY(-290px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-275px) ;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateY(-290px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-275px) ;
     }
 }
 
 @keyframes air {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateY(-400px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-380px) ;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateY(-400px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-380px) ;
     }
 }
