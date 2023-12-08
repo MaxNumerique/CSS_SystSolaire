@@ -82,7 +82,7 @@ body {
     height: 17px;
     box-shadow: var(--mer-box-shadow);    
     background-image: var(--mer-linear-gradient);
-    animation: 40s mer infinite linear;
+    animation: 8s mer infinite linear;
 }
 
 .foudre {
@@ -99,7 +99,7 @@ body {
     background-image: var();
     box-shadow: var(--feu-box-shadow);
     background-image: var(--feu-linear-gradient);
-    animation: 29s feu infinite linear;
+    animation: 39s feu infinite linear;
     
 }
 
@@ -169,7 +169,7 @@ body {
     height: 32px;
     box-shadow: var(--terre-box-shadow);    
     background-image: var(--terre-linear-gradient);
-    animation: 23s terre infinite linear;
+    animation: 16s terre infinite linear;
 }
 
 .air {
