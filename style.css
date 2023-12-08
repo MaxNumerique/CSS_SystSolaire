@@ -5,18 +5,23 @@
 }
 
 :root {
-    --soleil-box-shadow: 0 0 17px 5px rgb(224, 131, 8);
-    --planet-box-shadow: 0 0 10px 1px #ffffff;
-    --soleil-linear-gradient: linear-gradient(135deg, rgb(224, 131, 8), rgb(255, 51, 0));
-    --mer-linear-gradient: linear-gradient(135deg, rgb(0, 42, 125), rgb(9, 255, 198));
-    --terre-linear-gradient: linear-gradient(135deg, rgb(155, 221, 0), rgb(184, 73, 0));
+    --soleil-box-shadow: 0 0 490px 60px rgb(224, 131, 8);
+    --lune-box-shadow : 0 0 20px 1px rgb(217, 217, 217);
+    --mer-box-shadow: 0 0 30px 1px #083ff2;
+    --terre-box-shadow : 0 0 30px 1px #c26e00;
+    --foudre-box-shadow: 0 0 20px 1px #15b700;
+    --feu-box-shadow: 0 0 70px 1px #ab0055;
+    --air-box-shadow: 0 0 70px 1px #444444;
+    --soleil-linear-gradient: linear-gradient(135deg, rgb(224, 131, 8), rgb(255, 242, 0));
+    --mer-linear-gradient: linear-gradient(135deg, rgb(10, 76, 209), rgb(9, 255, 198));
+    --terre-linear-gradient: linear-gradient(135deg, rgb(188, 79, 1), rgb(255, 183, 0));
     --lune1-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
     --lune2-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
     --lune3-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
-    --foudre-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(159, 255, 49));
-    --feu-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(202, 0, 0));
-    --air-linear-gradient: linear-gradient(135deg, rgb(194, 194, 194), rgb(0, 0, 0));
-    --luneAir1-linear-gradient: linear-gradient(135deg,rgb(102, 102, 102), rgb(233, 233, 233));
+    --foudre-linear-gradient: linear-gradient(135deg, rgb(58, 169, 10), rgb(136, 255, 0));
+    --feu-linear-gradient: linear-gradient(135deg, rgb(194, 1, 1), rgb(255, 0, 140));
+    --air-linear-gradient: linear-gradient(135deg, rgb(54, 49, 49), rgb(0, 0, 0));
+    --luneAir1-linear-gradient: linear-gradient(135deg,rgb(102, 102, 102), rgb(255, 255, 255));
     --luneAir2-linear-gradient: linear-gradient(135deg, rgb(102, 102, 102), rgb(233, 233, 233));
 }
 
@@ -46,16 +51,22 @@ body {
     background-image: var(--soleil-linear-gradient);
     animation: 10s soleil infinite linear;
     position: absolute;
+    box-sizing: border-box;
+    filter: brightness(1.2) saturate(1.2);
     
 }
 
 @keyframes soleil {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1); 
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg) scale(1);
     }
 }
 
@@ -69,15 +80,15 @@ body {
 .mer {
     width: 17px;
     height: 17px;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--mer-box-shadow);    
     background-image: var(--mer-linear-gradient);
-    animation: 21s mer infinite linear;
+    animation: 40s mer infinite linear;
 }
 
 .foudre {
     width: 26px;
     height: 26px;
-    box-shadow: var(--planet-box-shadow);
+    box-shadow: var(--foudre-box-shadow);
     background-image: var(--foudre-linear-gradient);
     animation: 26s foudre infinite linear;
 }
@@ -86,9 +97,9 @@ body {
     width: 62px;
     height: 62px;
     background-image: var();
-    box-shadow: var(--planet-box-shadow);
+    box-shadow: var(--feu-box-shadow);
     background-image: var(--feu-linear-gradient);
-    animation: 40s feu infinite linear;
+    animation: 29s feu infinite linear;
     
 }
 
@@ -96,7 +107,7 @@ body {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--lune-box-shadow);    
     background-image: var(--lune1-linear-gradient);
     animation: 9s lune1 infinite linear;    
     position: fixed;
@@ -107,7 +118,7 @@ body {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--lune-box-shadow);    
     background-image: var(--lune2-linear-gradient);
     animation: 9s lune2 infinite linear;    
     position: fixed;
@@ -118,7 +129,7 @@ body {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--lune-box-shadow);    
     background-image: var(--lune3-linear-gradient);
     animation: 7.5s lune3 infinite linear;    
     position: fixed;
@@ -156,24 +167,24 @@ body {
 .terre {
     width: 32px;
     height: 32px;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--terre-box-shadow);    
     background-image: var(--terre-linear-gradient);
-    animation: 31s terre infinite linear;
+    animation: 23s terre infinite linear;
 }
 
 .air {
     width: 100px;
     height: 100px;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--air-box-shadow);    
     background-image: var(--air-linear-gradient);
-    animation: 57s air infinite linear;
+    animation: 76s air infinite linear;
 }
 
 .luneAir1 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--lune-box-shadow);    
     background-image: var(--luneAir1-linear-gradient);
     animation: 6s luneAir1 infinite linear;    
     position: fixed;
@@ -185,7 +196,7 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    box-shadow: var(--planet-box-shadow);    
+    box-shadow: var(--lune-box-shadow);    
     background-image: var(--luneAir2-linear-gradient);
     animation: 12s luneAir2 infinite linear;
     position: fixed;
